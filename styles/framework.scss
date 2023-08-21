@@ -127,7 +127,7 @@ $main_blue: #0075ff;
 }
 
 .my_info {
-  background-color: #dedede;
+  background-color: #eee;
   font-size: 12px;
   display: flex;
   justify-content: center;
@@ -135,6 +135,7 @@ $main_blue: #0075ff;
   padding: 5px 8px;
   border-radius: 10px;
   width: fit-content;
+  font-weight: 500;
 }
 // My Checkbox
 label {
@@ -154,6 +155,7 @@ label {
       }
     }
   }
+
   .toggle {
     position: relative;
     background-color: #ddd;
@@ -179,6 +181,55 @@ label {
       font-size: 16px;
       color: #ddd;
       transition: 0.3s;
+    }
+  }
+}
+
+label {
+  cursor: pointer;
+  input {
+    display: none;
+    &:checked + .small_toggle {
+      background-color: $main_blue;
+      &::before {
+        top: 50%;
+        left: 75%;
+        font-family: "Font Awesome 5 Free";
+        content: "\f00c";
+        font-weight: 900;
+        color: #0075ff;
+        transform: translate(0%, -50%);
+      }
+    }
+  }
+
+  .small_toggle {
+    position: relative;
+    background-color: #ddd;
+    padding: 12px 45px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &::before {
+      content: "X";
+      position: absolute;
+      width: 25%;
+      height: 75%;
+      background-color: white;
+      top: 50%;
+      left: 15%;
+      transform: translate(-50%, -50%);
+      border-radius: 54%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      color: #ddd;
+      transition: 0.3s;
+      width: 22%;
+      height: 79%;
+      font-size: 12px;
     }
   }
 }

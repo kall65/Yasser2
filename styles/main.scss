@@ -192,8 +192,9 @@ $main_grey: #888;
                   flex-direction: column;
                   gap: 3px;
                   h2 {
-                    color: #ccc;
-                    font-size: 17px;
+                    color: black;
+                    font-size: 12px;
+                    font-weight: normal;
                   }
                   p {
                     font-weight: bold;
@@ -421,6 +422,10 @@ $main_grey: #888;
                 justify-content: center;
                 align-items: center;
                 font-size: 18px;
+                cursor: pointer;
+                &:hover {
+                  color: $main_red;
+                }
               }
               &.done {
                 .text {
@@ -446,6 +451,7 @@ $main_grey: #888;
             flex-direction: column;
             justify-content: space-between;
             .topic {
+              font-weight: 500;
               color: #999;
             }
             .topic,
@@ -456,7 +462,7 @@ $main_grey: #888;
               padding: 10px;
               h2 {
                 font-size: 16px;
-                font-weight: 400;
+                font-weight: 500;
               }
             }
           }
@@ -482,6 +488,9 @@ $main_grey: #888;
                   // width: 100%;
                   height: 70%;
                 }
+              }
+              .my_info {
+                margin-left: 68px;
               }
               .text {
                 display: flex;
@@ -557,7 +566,9 @@ $main_grey: #888;
               right: 0;
               opacity: 0.3;
               img {
-                width: 100%;
+                width: 145%;
+                opacity: 0.4;
+                margin-left: -41px;
               }
             }
           }
@@ -670,13 +681,17 @@ $main_grey: #888;
                 }
               }
               .text {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
                 h2 {
                   font-size: 20px;
                   font-weight: 500;
                 }
                 p {
-                  font-size: 13px;
+                  font-size: 14px;
                   color: #999;
+                  font-weight: 500;
                 }
               }
             }
@@ -1120,6 +1135,7 @@ $main_grey: #888;
                 padding: 15px 30px;
                 label {
                   font-size: 17px;
+                  margin-left: 8px;
                 }
                 input {
                   width: 25px;
@@ -1142,7 +1158,17 @@ $main_grey: #888;
                   gap: 20px;
                   border: 2px solid #ccc;
                   border-radius: 7px;
-                  padding: 10px;
+                  padding: 10px 3px;
+
+                  label {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 20px;
+                    width: 100%;
+                    height: 100%;
+                  }
                 }
                 input {
                   display: none;
@@ -1172,13 +1198,14 @@ $main_grey: #888;
               align-items: center;
               gap: 15px;
               border-right: 1px solid #eee;
+
               .logo {
                 width: 100%;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 img {
-                  width: 100px;
+                  width: 90px;
                 }
               }
               > .text {
@@ -1210,6 +1237,7 @@ $main_grey: #888;
                 }
                 .stars {
                   i {
+                    font-size: 12px;
                     color: gold;
                   }
                 }
@@ -1225,19 +1253,26 @@ $main_grey: #888;
               width: 80%;
               display: flex;
               flex-direction: column;
+              gap: 10px;
               .block {
                 padding: 15px;
-                display: flex;
-                flex-direction: column;
+                display: grid;
+                grid-template: 1fr 1fr;
                 gap: 10px;
+                transition: 0.3s;
+                &:hover {
+                  background-color: #ccc2;
+                }
                 .block_title {
                   h2 {
                     font-size: 15px;
+                    font-weight: 500;
+                    color: $main_grey;
                   }
                 }
                 .details {
                   display: grid;
-                  grid-template-columns: 1fr 1fr;
+                  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
                   gap: 5px;
                   .detail:not(:nth-of-type(4)) {
                     display: flex;
@@ -1269,6 +1304,28 @@ $main_grey: #888;
                 }
                 &:not(:nth-of-type(4)) {
                   border-bottom: 1px solid #ccc;
+                }
+              }
+            }
+            @media (max-width: 767px) {
+              & {
+                flex-direction: column;
+              }
+              & > .person {
+                width: 100%;
+              }
+              & > .info {
+                width: 100%;
+                .block {
+                  .block_title {
+                    text-align: center;
+                  }
+                  .details {
+                    display: flex;
+                    flex-direction: column;
+                    margin: 5px auto;
+                    gap: 10px;
+                  }
                 }
               }
             }
@@ -1351,6 +1408,15 @@ $main_grey: #888;
               }
             }
           }
+          @media (max-width: 991px) {
+            & {
+              display: flex;
+              flex-direction: column;
+              .profile_skills {
+                align-items: center;
+              }
+            }
+          }
         }
         .project_box {
           height: fit-content;
@@ -1412,6 +1478,15 @@ $main_grey: #888;
                 .my_info {
                   border-radius: 5px;
                 }
+                @media (max-width: 767px) {
+                  & {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    justify-content: center;
+                    height: 80%;
+                    gap: 10px;
+                  }
+                }
               }
               &.rate_and_price {
                 display: flex;
@@ -1455,6 +1530,14 @@ $main_grey: #888;
                       font-weight: bold;
                       font-size: 16px;
                     }
+                  }
+                }
+                @media (max-width: 767px) {
+                  & {
+                    height: 17%;
+                    flex-direction: column;
+                    margin-top: 15px;
+                    gap: 5px;
                   }
                 }
               }
@@ -1555,7 +1638,6 @@ $main_grey: #888;
           display: grid;
           grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
           .box {
-            height: 330px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -1581,7 +1663,7 @@ $main_grey: #888;
               }
               .avatar {
                 border-bottom: 1px solid #ddd7;
-                padding: 30px 0 15px;
+                padding: 10px 0 15px;
 
                 display: flex;
                 flex-direction: column;
@@ -1606,6 +1688,7 @@ $main_grey: #888;
               gap: 5px;
               padding: 10px;
               border-bottom: 1px solid #ddd7;
+              height: 25%;
               h2 {
                 font-size: 15px;
                 font-weight: 500;
@@ -1672,6 +1755,18 @@ $main_grey: #888;
           height: fit-content;
           justify-content: space-between;
           align-items: flex-start;
+          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+          @media (max-width: 991px) {
+            & {
+              flex-direction: column;
+            }
+            & .statistics {
+              width: 95% !important;
+            }
+            & .files {
+              width: 95% !important;
+            }
+          }
           .box {
             height: fit-content;
             &.statistics {
@@ -1741,7 +1836,6 @@ $main_grey: #888;
                   &:nth-of-type(3) {
                     .icon {
                       background-color: #f4433620;
-                      // opacity: 0.2;
                       i {
                         color: $main_red;
                       }
@@ -1779,6 +1873,7 @@ $main_grey: #888;
               }
             }
             &.files {
+              // background-color: red;
               background-color: inherit;
               width: 80%;
               display: grid;

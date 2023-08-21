@@ -112,7 +112,7 @@ ul {
 }
 
 .my_info {
-  background-color: #dedede;
+  background-color: #eee;
   font-size: 12px;
   display: flex;
   justify-content: center;
@@ -121,6 +121,7 @@ ul {
   border-radius: 10px;
   width: -moz-fit-content;
   width: fit-content;
+  font-weight: 500;
 }
 
 label {
@@ -167,4 +168,52 @@ label .toggle::before {
   font-size: 16px;
   color: #ddd;
   transition: 0.3s;
+}
+
+label {
+  cursor: pointer;
+}
+label input {
+  display: none;
+}
+label input:checked + .small_toggle {
+  background-color: #0075ff;
+}
+label input:checked + .small_toggle::before {
+  top: 50%;
+  left: 75%;
+  font-family: "Font Awesome 5 Free";
+  content: "\f00c";
+  font-weight: 900;
+  color: #0075ff;
+  transform: translate(0%, -50%);
+}
+label .small_toggle {
+  position: relative;
+  background-color: #ddd;
+  padding: 12px 45px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+label .small_toggle::before {
+  content: "X";
+  position: absolute;
+  width: 25%;
+  height: 75%;
+  background-color: white;
+  top: 50%;
+  left: 15%;
+  transform: translate(-50%, -50%);
+  border-radius: 54%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: #ddd;
+  transition: 0.3s;
+  width: 22%;
+  height: 79%;
+  font-size: 12px;
 }/*# sourceMappingURL=framework.css.map */
