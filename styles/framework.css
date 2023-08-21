@@ -1,0 +1,170 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-track {
+  background: white;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0075ff;
+}
+
+body {
+  font-family: "Open Sans", sans-serif !important;
+  margin: 0;
+}
+
+*:focus {
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+.title {
+  padding: 15px 25px;
+  position: relative;
+}
+.title h2 {
+  font-size: 30px;
+}
+.title::before {
+  content: "";
+  position: absolute;
+  width: 130px;
+  height: 3px;
+  background-color: white;
+  bottom: 0;
+  border-radius: 10px;
+}
+.title::after {
+  content: "";
+  position: absolute;
+  width: 70px;
+  height: 3px;
+  background-color: black;
+  bottom: 0;
+  border-radius: 10px;
+}
+
+.boxes {
+  display: grid;
+  gap: 25px;
+  padding: 25px;
+}
+.boxes .box {
+  border-radius: 10px;
+  background-color: white;
+  height: 400px;
+  padding: 15px;
+}
+.boxes .box .box_title {
+  height: 70px;
+}
+.boxes .box .box_title h2 {
+  font-size: 23px;
+  margin: 0 0 10px;
+}
+.boxes .box .box_title p {
+  color: #777;
+  font-size: 17px;
+}
+.boxes .box .content {
+  height: calc(100% - 70px);
+}
+
+.boxes_twos {
+  grid-template-columns: 1fr 1fr;
+}
+
+.boxes_ones {
+  grid-template-columns: 1fr;
+}
+
+@media (max-width: 1100px) {
+  .page .content .dashboard .boxes_twos {
+    grid-template-columns: 1fr;
+  }
+}
+.btn {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 20px;
+}
+.btn a {
+  background-color: #0075ff;
+  padding: 5px 7px;
+  border-radius: 5px;
+  color: white;
+  font-size: 14px;
+}
+
+.my_info {
+  background-color: #dedede;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 8px;
+  border-radius: 10px;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+label {
+  cursor: pointer;
+}
+label input {
+  display: none;
+}
+label input:checked + .toggle {
+  background-color: #0075ff;
+}
+label input:checked + .toggle::before {
+  top: 50%;
+  left: 75%;
+  font-family: "Font Awesome 5 Free";
+  content: "\f00c";
+  font-weight: 900;
+  color: #0075ff;
+  transform: translate(-50%, -50%);
+}
+label .toggle {
+  position: relative;
+  background-color: #ddd;
+  padding: 18px 40px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+label .toggle::before {
+  content: "X";
+  position: absolute;
+  width: 40%;
+  height: 80%;
+  background-color: white;
+  top: 50%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 16px;
+  color: #ddd;
+  transition: 0.3s;
+}/*# sourceMappingURL=framework.css.map */
